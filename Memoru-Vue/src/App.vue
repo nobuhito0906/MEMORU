@@ -1,21 +1,53 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+    <input v-model="userId" />
+    <p>userId:{{ userId }}</p>
+    <vue-good-table :columns="columns" :rows="rows" />
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<script lang="ts">
+export default {
+  name: "Todos",
+  data() {
+    return {
+      userId: "",
+      columns: [
+        {
+          label: "ID",
+          field: "id",
+          type: "number",
+        },
+        {
+          label: "メモ",
+          field: "memo",
+        },
+        {
+          label: "備考",
+          field: "remarks",
+        },
+        {
+          label: "ユーザID",
+          field: "userId",
+        },
+        {
+          label: "行動日",
+          field: "actionDate",
+          type: "date",
+          dateInputFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSX",
+          dateOutputFormat: "MMM do yy",
+        },
+      ],
+      rows: [
+        {
+          id: 111,
+          memo: "メモ1",
+          remarks: "備考1",
+          userId: "ABD",
+          actionDate: new Date(),
+        },
+      ],
+    };
+  },
+};
+</script>

@@ -3,10 +3,10 @@
  */
 package com.jp.memoru.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,19 +15,18 @@ import lombok.EqualsAndHashCode;
  * @author nobuhito0906
  *
  */
-@Data
 @Entity
-@Table(name = "todo")
+@Data
 @EqualsAndHashCode(callSuper = false)
-public class TodoEntity extends BaseEntity {
+public class BaseEntity implements Serializable {
 
-	private Integer id;
+	private Date createDate;
 
-	private String memo;
+	private String createUser;
 
-	private String remarks;
+	private Date updateDate;
 
-	private Date actionDate;
+	private String updateUser;
 
-	private String userId;
+	private Integer version;
 }

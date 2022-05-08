@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "extends": "Memoru-Vue/tsconfig.json",
+        "target": "es2015",
+        "module": "commonjs",
+        "strict": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
+    }
+}

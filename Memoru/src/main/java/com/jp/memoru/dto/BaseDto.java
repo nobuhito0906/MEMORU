@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jp.memoru.entity;
+package com.jp.memoru.dto;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import lombok.Data;
  *
  */
 @Data
-public class BaseEntity {
+public class BaseDto {
 
 	/**作成日時*/
 	private Date createDate;

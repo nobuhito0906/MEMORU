@@ -16,5 +16,5 @@ import com.jp.memoru.dto.MemoDto;
 @Service
 public interface MemoService {
 
-	public abstract List<MemoDto> get();
+	public abstract List<MemoDto> get(String userId);
 }

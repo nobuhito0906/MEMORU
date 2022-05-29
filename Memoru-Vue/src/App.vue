@@ -11,17 +11,24 @@
 
 <script lang="ts">
 import columns from "./assets/TodoColumns.json";
-import rows from "./assets/Todo.json";
 import axios from "./services/axios";
-// import apiSerivce from "./services/ApiService";
+import convertUtil from "./components/convertUtil";
 export default {
   name: "Todos",
   data() {
     return {
       userId: "",
       columns: columns,
-      rows: rows,
+      rows: [],
       data: null,
+      row: {
+        id: null,
+        memo: "",
+        remarks: "",
+        actionDate: "",
+        actionTime: "",
+        actionFlag: false,
+      },
     };
   },
   methods: {
@@ -34,8 +41,18 @@ export default {
           },
         })
         .then((res) => {
-          this.data = res.data;
+          const data = res.data;
           console.log("data:", res.data);
+          data.forEach((elm) => {
+            this.row["id"] = elm.id;
+            this.row["memo"] = elm.memo;
+            this.row["remarks"] = elm.remarks;
+            this.row["actionDate"] = elm.actionDate;
+            this.row["actionTime"] = convertUtil.convertTime(elm.actionTime);
+            this.row["actionFlag"] = convertUtil.convertFlag(elm.actionFlag);
+            this.row["version"] = elm.version;
+            this.rows.push(this.row);
+          });
         })
         .catch((err) => {
           console.log("err:", err);

@@ -13,14 +13,17 @@
         "field": "remarks"
     },
     {
-        "label": "ユーザID",
-        "field": "userId"
+        "label": "行動日",
+        "field": "actionDate"
+        
     },
     {
-        "label": "行動日",
-        "field": "actionDate",
-        "type": "date",
-        "dateInputFormat": "yyyy-MM-dd'T'HH:mm:ss.SSSX",
-        "dateOutputFormat": "MMM do yy"
+        "label": "行動時間",
+        "field": "actionTime"
+        
+    },
+    {
+        "label": "行動済",
+        "field": "actionFlag"
     }
 ]

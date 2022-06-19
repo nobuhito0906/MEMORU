@@ -6,6 +6,8 @@ import { createVuetify } from 'vuetify'
 import VueGoodTablePlugin from 'vue-good-table-next';
 // import the styles
 import 'vue-good-table-next/dist/vue-good-table-next.css'
+import router from '../router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import App from './App.vue'
 const app = createApp(App)
@@ -14,7 +16,9 @@ const vuetify = createVuetify({
     directives
 })
 
+
 app.use(vuetify)
 app.use(VueGoodTablePlugin)
+app.use(router)
 app.mount('#app')
 

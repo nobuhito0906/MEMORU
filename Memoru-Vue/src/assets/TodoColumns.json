@@ -1,0 +1,29 @@
+[
+    {
+        "label": "ID",
+        "field": "id",
+        "type": "number"
+    },
+    {
+        "label": "メモ",
+        "field": "memo"
+    },
+    {
+        "label": "備考",
+        "field": "remarks"
+    },
+    {
+        "label": "行動日",
+        "field": "actionDate"
+        
+    },
+    {
+        "label": "行動時間",
+        "field": "actionTime"
+        
+    },
+    {
+        "label": "行動済",
+        "field": "actionFlag"
+    }
+]

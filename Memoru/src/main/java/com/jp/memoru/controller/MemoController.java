@@ -1,6 +1,5 @@
 package com.jp.memoru.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +26,26 @@ public class MemoController {
 	@Autowired
 	private MemoService memoService;
 
-	@RequestMapping("memo")
-	public List<MemoDto> get(String userId) {
+	@GetMapping("/memo")
+	public List<MemoDto> get(@RequestParam("userId") String userId) {
 
 		log.debug("userId:{}", userId);
+		log.info("userId:{}", userId);
+		return memoService.get(userId);
 
-		return new ArrayList<>();
 	}
 
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+		log.info("name:{}", name);
+
 		return String.format("Hello %s!", name);
+	}
+
+	@RequestMapping("/")
+	public String login() {
+		log.debug("hello World!");
+
+		return "hello World!";
 	}
 }

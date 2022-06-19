@@ -3,9 +3,8 @@
  */
 package com.jp.memoru.dto;
 
-import java.util.Date;
-
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author nobuhito0906
@@ -13,7 +12,8 @@ import lombok.Data;
  * メモDto.
  */
 @Data
-public class MemoDto {
+@EqualsAndHashCode(callSuper = false)
+public class MemoDto extends BaseDto {
 
 	/**ID*/
 	private Integer id;
@@ -25,5 +25,11 @@ public class MemoDto {
 	private String remarks;
 
 	/**行動日時*/
-	private Date actionDate;
+	private String actionDate;
+
+	/**行動日時*/
+	private String actionTime;
+
+	/**行動済フラグ*/
+	private boolean actionFlag;
 }
